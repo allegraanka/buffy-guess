@@ -9,6 +9,26 @@
         <link href="assets/css/style.css" rel="stylesheet">
     </head>
     <body>
+        <h1>buffy word guess</h1>
+        <button id="startButton" class="start-button" type="button">start a new game</button>
+
+        <div id="gameBoard" class="game-board">
+            <div id="wins" class="wins">
+                <p>wins<span id="winCount"></span></p>
+            </div>
+            <div id="currentHint" class="current-hint">
+                <p>current hint<span id="hintInPlay"></span></p>
+            </div>
+            <div id="currentWord" class="current-word">
+                <p>current word<span id="wordInPlay"></span></p>
+            </div>
+            <div id="guessesLeft" class="guesses-left">
+                <p>guesses remaining<span id="guessCount"></span></p>
+            </div>
+            <div id="lettersGuessed" class="letters-guessed">
+                <p>letters guessed<span id="guessCount"></span></p>
+            </div>
+        </div>
         <script src="assets/javascript/game.js"></script>
     </body>
 </html>
