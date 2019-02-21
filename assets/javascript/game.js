@@ -6,6 +6,7 @@ var startButton = document.getElementById("startButton");
 
 startButton.addEventListener("click", function() {
     gameBoard.style.display = "block";
+    game.getRound();
 });
 
 var winCount = document.getElementById("winCount");
@@ -39,10 +40,20 @@ var game = {
 
     getRound: function() {
         var round = this.rounds[Math.floor(Math.random() * this.rounds.length)];
-        hintInPlay = round[0];
-        wordInPlay = round[1];
-        console.log(hintInPlay);
-        console.log(wordInPlay.length);
+        currentHint = round[0];
+        currentWord = round[1];
+        hintInPlay.textContent = " " + currentHint;
+        
+        var letters = currentWord.split('');
+        var spaces = [];
+        for (var i = 0; i < letters.length; i++) {
+            spaces.push(" _ ");
+        }
+        wordInPlay.textContent = spaces.join('');
+    },
+
+    updateRound: function() {
+        // if letter is guess correctly, replace "_" with correcly guessed letter
     }
 };
 
