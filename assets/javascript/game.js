@@ -17,7 +17,7 @@ var lettersGuessed = document.getElementById("lettersGuessed");
 
 var game = {
     rounds: [
-        ["the chosen one", "buffy summers"],
+        ["the chosen one", "buffy"],
         ["the champion", "spike"],
         ["hint", "word"],
         ["hint", "word"],
@@ -40,10 +40,12 @@ var game = {
 
     getRound: function() {
         var round = this.rounds[Math.floor(Math.random() * this.rounds.length)];
+        var guessesLeft = 10;
         currentHint = round[0];
         currentWord = round[1];
         hintInPlay.textContent = " " + currentHint;
-        var guessesLeft = 10;
+        guessCount.textContent = guessesLeft;
+        lettersGuessed.textContent = "";
         
         var letters = currentWord.split('');
         var spaces = [];
@@ -54,17 +56,15 @@ var game = {
 
         document.onkeyup = function (event) {
             var userInput = event.key;
+            wins = 0;
             for (var i = 0; i < currentWord.length; i++) {
                 if (currentWord.charAt(i) === userInput) {
                     spaces[i] = userInput;
                     wordInPlay.textContent = spaces.join(' ');
-                    guessesLeft--;
-                    guessCount.textContent = guessesLeft;
                 } 
             }
             if (spaces.join('') === currentWord) {
-                console.log("you won! play again!"); 
-                // display this message on the page and show 'play again' button that reloads game
+                guessCount.textContent = "You won! Play again!";
             }
             if (!currentWord.includes(userInput)) {
                 var wrongLetter = document.createElement("li");
@@ -74,9 +74,7 @@ var game = {
                 guessCount.textContent = guessesLeft;
             }
             if (guessesLeft <= 0) {
-                guessCount.textContent = "GAME OVER.";
-                console.log("GAME OVER.");
-                // display this message on the page and show 'try again' button that reloads game
+                guessCount.textContent = "Ooops! GAME OVER.";
             }
         }
     }

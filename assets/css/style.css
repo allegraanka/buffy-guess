@@ -1,5 +1,44 @@
 
-/* hide gameboard at the start of the game */
-#gameBoard {
-    display: none;
+body {
+    /* width: 50%;
+    margin: auto; */
+    font-family: 'Raleway', sans-serif;
+    background: url("../images/buffy.jpg");
+    background-size: cover;
+}
+
+.game-title-container {
+    position: fixed;
+    bottom: 10%;
+    margin-left: 5%;
+    font-family: 'Merriweather', serif;
+    color: #e8dada;
+}
+
+.game-title {
+    font-size: 6rem;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    color: #e8dada;
+}
+
+.game-tiles {
+    padding: 20px;
+    margin: 10px;
+}
+
+#wordInPlay, #hintInPlay, #winCount, #guessCount {
+    font-size: 2.5rem;
+    padding: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+ul li {
+    display: inline;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 5px;
 }
