@@ -19,23 +19,23 @@ var game = {
     rounds: [
         ["the chosen one", "buffy"],
         ["the champion", "spike"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"],
-        ["hint", "word"]
+        ["kills vamps", "stake"],
+        ["he watches", "giles"],
+        ["he sees", "xander"],
+        ["the witch", "willow"],
+        ["girlfriend", "tara"],
+        ["used to be a demon", "anya"],
+        ["anya's worst fear", "bunnies"],
+        ["under the library", "hellmouth"],
+        ["the town where buffy lived", "sunnydale"],
+        ["had a soul first", "angel"],
+        ["he was a werewolf", "oz"],
+        ["once more with", "feeling"],
+        ["they got the what? out", "mustard"],
+        ["grrrrr", "arrrggghhh"],
+        ["absent that decade", "faith"],
+        ["killed by andrew to open the hellmouth", "jonathan"],
+        ["friendly disposition, despite being a demon who eats kittens", "clem"]
     ],
 
     getRound: function() {
@@ -56,7 +56,6 @@ var game = {
 
         document.onkeyup = function (event) {
             var userInput = event.key;
-            wins = 0;
             for (var i = 0; i < currentWord.length; i++) {
                 if (currentWord.charAt(i) === userInput) {
                     spaces[i] = userInput;

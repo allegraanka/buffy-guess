@@ -11,15 +11,17 @@ body {
     position: fixed;
     bottom: 10%;
     margin-left: 5%;
-    font-family: 'Merriweather', serif;
     color: #e8dada;
 }
 
 .game-title {
     font-size: 6rem;
+    font-family: 'Merriweather', serif;
 }
 
 .game-board {
+    width: 50%;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     color: #e8dada;
@@ -36,9 +38,36 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+#startButton {
+    position: fixed;
+    top: 20%;
+    left: 2%;
+    padding: 5px;
+    background: #e8dada;
+}
+
+#homeButton {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+}
+
 ul li {
     display: inline;
     font-size: 1.2rem;
     padding: 5px;
     margin: 5px;
+}
+
+a:link {
+    color: #e8dada;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #e8dada;
+}
+
+a:hover {
+    text-decoration: underline;
 }
