@@ -14,6 +14,8 @@ var hintInPlay = document.getElementById("hintInPlay");
 var wordInPlay = document.getElementById("wordInPlay");
 var guessCount = document.getElementById("guessCount");
 var lettersGuessed = document.getElementById("lettersGuessed");
+var wins = 0;
+var losses = 0;
 
 var game = {
     rounds: [
@@ -64,6 +66,8 @@ var game = {
             }
             if (spaces.join('') === currentWord) {
                 guessCount.textContent = "You won! Play again!";
+                wins++;
+                document.getElementById("wins").textContent = "wins: " + wins;
             }
             if (!currentWord.includes(userInput)) {
                 var wrongLetter = document.createElement("li");
@@ -74,6 +78,8 @@ var game = {
             }
             if (guessesLeft <= 0) {
                 guessCount.textContent = "Ooops! GAME OVER.";
+                losses++;
+                document.getElementById("losses").textContent = "losses: " + losses;
             }
         }
     }
