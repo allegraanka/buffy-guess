@@ -52,6 +52,13 @@ body {
     left: 2%;
 }
 
+#scores {
+    position: fixed;
+    top: 10%;
+    left: 2%;
+    color: #e8dada;
+}
+
 ul li {
     display: inline;
     font-size: 1.2rem;
