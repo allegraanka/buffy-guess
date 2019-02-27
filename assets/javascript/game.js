@@ -16,6 +16,8 @@ var guessCount = document.getElementById("guessCount");
 var lettersGuessed = document.getElementById("lettersGuessed");
 var wins = 0;
 var losses = 0;
+var won = false;
+var lost = false;
 
 var game = {
     rounds: [
@@ -40,6 +42,13 @@ var game = {
         ["friendly disposition, despite being a demon who eats kittens", "clem"]
     ],
 
+    initializeGame: function() {
+            hintInPlay = "";
+            wordInPlay = "";
+            lettersGuessed = "";
+            guessCount = "";
+    },
+
     getRound: function() {
         var round = this.rounds[Math.floor(Math.random() * this.rounds.length)];
         var guessesLeft = 10;
@@ -58,6 +67,9 @@ var game = {
 
         document.onkeyup = function (event) {
             var userInput = event.key;
+            // if (won) {
+            //   return false;
+            // }
             for (var i = 0; i < currentWord.length; i++) {
                 if (currentWord.charAt(i) === userInput) {
                     spaces[i] = userInput;
@@ -68,6 +80,7 @@ var game = {
                 guessCount.textContent = "You won! Play again!";
                 wins++;
                 document.getElementById("wins").textContent = "wins: " + wins;
+                won = true;
             }
             if (!currentWord.includes(userInput)) {
                 var wrongLetter = document.createElement("li");
@@ -80,6 +93,7 @@ var game = {
                 guessCount.textContent = "Ooops! GAME OVER.";
                 losses++;
                 document.getElementById("losses").textContent = "losses: " + losses;
+                lost = true;
             }
         }
     }
